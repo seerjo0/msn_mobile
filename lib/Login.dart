@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home.dart';
+import 'Register.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,9 +10,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
-  late String _password;
-  final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
 
   _loginController() {}
 
@@ -127,16 +125,20 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  const TextButton(
-                    onPressed: null,
-                    child: Text(
-                      "Don't have an account.",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12,
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 12)
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Register()),
+                      );
+                    },
+                    child: const Text(
+                      "Don't have an account."
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
