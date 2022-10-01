@@ -10,11 +10,22 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   sqflite: ^2.1.0
+  flutter_launcher_icons: ^0.10.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter_icons:
+  image_path: "icon/icon.png"
+  android: true
+  ios: true
+  # optionally, as transparency is not allowed on app store
+  # remove_alpha_ios: true
+
 flutter:
   assets:
   - assets/
+  - icon/
   uses-material-design: true
+
