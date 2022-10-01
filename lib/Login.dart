@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home.dart';
+import 'PasswordRecover.dart';
 import 'Register.dart';
 
 class Login extends StatefulWidget {
@@ -10,7 +11,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   _loginController() {}
 
   _passwordController() {}
@@ -115,30 +115,36 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  const TextButton(
-                    onPressed: null,
-                    child: Text(
-                      "Forgot my password.",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
                   TextButton(
                     style: TextButton.styleFrom(
-                      textStyle: const TextStyle(fontSize: 12)
-                    ),
+                        textStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    )),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Register()),
+                        MaterialPageRoute(
+                            builder: (context) => const PasswordRecover()),
                       );
                     },
-                    child: const Text(
-                      "Don't have an account."
-                      ),
-                    ),
+                    child: const Text("Forgot my password."),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        textStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    )),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Register()),
+                      );
+                    },
+                    child: const Text("Don't have an account."),
+                  ),
                 ],
               ),
             ),

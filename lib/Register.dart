@@ -43,7 +43,7 @@ class _RegisterState extends State<Register> {
                     style: TextStyle(color: Colors.blue, fontSize: 30),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 30),
                     child: TextField(
                       controller: _loginController(),
                       maxLines: 1,
