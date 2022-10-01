@@ -9,11 +9,22 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  late String _password;
+  final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
+
   _loginController() {}
 
   _passwordController() {}
 
+  bool _passwordVisible = false;
+
   @override
+  void initState() {
+    super.initState();
+    _passwordVisible = false;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -60,26 +71,39 @@ class _LoginState extends State<Login> {
                       controller: _passwordController(),
                       maxLines: 1,
                       keyboardType: TextInputType.text,
-                      obscureText: true,
+                      obscureText: !_passwordVisible,
                       enabled: true,
                       decoration: InputDecoration(
-                        label: const Text('Password',
-                            style: TextStyle(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.lightBlue),
-                          borderRadius: BorderRadius.circular(60),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.lightBlue),
-                          borderRadius: BorderRadius.circular(60),
-                        ),
-                      ),
+                          label: const Text('Password',
+                              style: TextStyle(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Colors.lightBlue),
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Colors.lightBlue),
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _passwordVisible = !_passwordVisible;
+                                });
+                              },
+                              icon: Icon(
+                                _passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Theme.of(context).primaryColorDark,
+                              ))),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15),
                     child: ElevatedButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => const Home()),
