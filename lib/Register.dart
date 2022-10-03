@@ -23,6 +23,7 @@ class _RegisterState extends State<Register> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -159,21 +160,28 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Login()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: const StadiumBorder()),
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                    padding: const EdgeInsets.only(bottom: 40),
+                    child: SizedBox(
+                        width: 250.0,
+                        height: 50.0,
+                        child: ButtonTheme(
+                          buttonColor: Colors.blue[1000],
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Login()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: const StadiumBorder()),
+                            child: const Text(
+                              'Create Account',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        )
                     ),
                   ),
                 ],

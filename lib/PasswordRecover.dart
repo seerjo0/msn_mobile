@@ -15,6 +15,7 @@ class _PasswordRecoverState extends State<PasswordRecover> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -58,20 +59,28 @@ class _PasswordRecoverState extends State<PasswordRecover> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30,bottom: 15),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Login()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: const StadiumBorder()),
-                      child: const Text(
-                        'Send Password',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                    padding: const EdgeInsets.only(top: 30, bottom: 40),
+                    child: SizedBox(
+                        width: 250.0,
+                        height: 50.0,
+                        child: ButtonTheme(
+                          buttonColor: Colors.blue[1000],
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Login()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: const StadiumBorder()),
+                            child: const Text(
+                              'Send Password',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        )
                     ),
                   ),
                 ],
