@@ -21,6 +21,7 @@ class _RegisterState extends State<Register> {
     _passwordVisible = false;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

@@ -42,9 +42,9 @@ class _LoginState extends State<Login> {
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         'Welcome back!',
                         style: TextStyle(
@@ -52,10 +52,10 @@ class _LoginState extends State<Login> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: Row(
-                      children: const [
+                      children: [
                         Text(
                           'E-mail',
                           style: TextStyle(
@@ -87,8 +87,8 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Text(
                         'Password',
                         style: TextStyle(
