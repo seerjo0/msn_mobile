@@ -197,7 +197,7 @@ class _LoginState extends State<Login> {
                                 builder: (context) => const Register()),
                           );
                         },
-                        child: const Text("Sing up"),
+                        child: const Text("Sign up"),
                       ),
                     ],
                   )
